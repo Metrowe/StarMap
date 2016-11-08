@@ -5,13 +5,16 @@ Student No: C15384676
 
 void setup()
 {
-  size(800,800);
-  
+  size(500,500);
+  /////////////////////////////////////////////size(800,800);
   loadData();
   printStars();
 }//end setup
 
 ArrayList<Star> stars = new ArrayList<Star>();
+
+float border = 50;
+int split = 11;
 
 void loadData()
 {
@@ -35,7 +38,28 @@ void printStars()
   }//end for
 }//end printStars
 
+void grid()
+{
+  float gx,gy;
+  
+  stroke(255,0,255);
+  //for(int i = 0,p = -5;p < 6;i++,p++)
+  for(int p = -5;p < 6;p++)
+  {
+    gx = map(p,  -5,5,  border,(width-border));
+    gy = map(p,  -5,5,  border,(height-border));
+    
+    line(gx,border,  gx,(height-border));
+    line(border,gy,  (width-border),gy);
+    
+    text(p,  gx, border*0.5);
+    text(p,  border*0.5, gy);
+    
+  }//end for
+}//end grid
+
 void draw()
 {
-  
+  background(0);
+  grid();
 }//end draw
