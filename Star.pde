@@ -17,4 +17,9 @@ class Star
     Zg = row.getFloat(15);
     size = row.getFloat(16);
   }//end GDP
+  
+  String tostring()
+  {
+    return hab + " " + name + " " + distance + " " + Xg + " " + Yg + " " + Zg + " " + size;
+  }//end toString
 }//end class cash

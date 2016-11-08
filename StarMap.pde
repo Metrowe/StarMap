@@ -8,6 +8,7 @@ void setup()
   size(800,800);
   
   loadData();
+  printStars();
 }//end setup
 
 ArrayList<Star> stars = new ArrayList<Star>();
@@ -23,6 +24,16 @@ void loadData()
     stars.add(local);
   }//end for
 }//end loaDdata
+
+void printStars()
+{
+  for(int i = 0;i < stars.size();i++)
+  {
+    Star s = stars.get(i);
+    String str = s.tostring();
+    println(str);
+  }//end for
+}//end printStars
 
 void draw()
 {
